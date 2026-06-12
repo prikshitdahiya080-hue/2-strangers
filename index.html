@@ -1,10 +1,220 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>2 Strangers ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2 Strangers ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050505;
+color:white;
+font-family:Georgia, serif;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:4rem;
+color:#ff5e9c;
+text-shadow:0 0 20px rgba(255,94,156,.6);
+}
+
+.hero p{
+margin-top:20px;
+font-size:1.2rem;
+opacity:.8;
+}
+
+.section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:60px 25px;
+text-align:center;
+}
+
+.story{
+max-width:850px;
+font-size:1.4rem;
+line-height:2.2rem;
+}
+
+.highlight{
+color:#ff7db1;
+}
+
+.final{
+font-size:2rem;
+line-height:3rem;
+}
+
+.heart{
+position:fixed;
+pointer-events:none;
+font-size:22px;
+animation:float 2.5s linear forwards;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0) scale(1);
+opacity:1;
+}
+100%{
+transform:translateY(-250px) scale(1.8);
+opacity:0;
+}
+}
+
+.stars{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+overflow:hidden;
+}
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+50%{
+opacity:.2;
+}
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.story{
+font-size:1.1rem;
+line-height:2rem;
+}
+
+.final{
+font-size:1.5rem;
+}
+}
+</style>
 </head>
-<body style="background:black;color:white;text-align:center;padding-top:100px;font-family:Arial;">
-    <h1>Do Ajnabi Se Ek Jaan Tak ❤️</h1>
-    <p>Website under construction...</p>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<section class="hero">
+<h1>Do Ajnabi Se Ek Jaan Tak ❤️</h1>
+<p>Scroll Down ✨</p>
+</section>
+
+<section class="section">
+<div class="story">
+Ek hi school ki raahon mein chalte the hum,<br>
+Ek hi shehar ki hawaaon mein palte the hum.<br>
+Ghar bhi paas the, raaste bhi paas the,<br>
+Phir bhi na jaane kyun hum ek dusre se anjaan the.
+</div>
+</section>
+
+<section class="section">
+<div class="story">
+Shayad kismat ko apni kahani likhne ka intezaar tha,<br>
+Do dilon ko ek karne ka khayal tha.<br><br>
+
+<span class="highlight">Phir ek din tum mili...</span>
+</div>
+</section>
+
+<section class="section">
+<div class="story">
+Na koi shor hua, na aasman badla,<br>
+Bas ek chhoti si baat hui, aur sab kuch badal gaya.<br>
+Dheere dheere alfaaz badhe, baatein gehri hui,<br>
+Aur anjaane mein dil ki duniya tumse hi bhari hui.
+</div>
+</section>
+
+<section class="section">
+<div class="story">
+Har subah tumse shuru hone lagi,<br>
+Har raat tum par khatam hone lagi.<br><br>
+
+Tumhari khushi meri dua ban gayi,<br>
+Tumhara dard meri khamoshi ban gayi.
+</div>
+</section>
+
+<section class="section">
+<div class="story final">
+Do ajnabi jo kabhi ek dusre ko jaante tak nahi the,<br>
+Aaj ek dusre ke bina khud ko pehchaante nahi. ❤️<br><br>
+
+✨ Do Ajnabi Se Ek Jaan Tak ✨
+</div>
+</section>
+
+<script>
+
+for(let i=0;i<120;i++){
+let star=document.createElement("div");
+star.classList.add("star");
+
+star.style.width=Math.random()*3+"px";
+star.style.height=star.style.width;
+
+star.style.left=Math.random()*100+"%";
+star.style.top=Math.random()*100+"%";
+
+star.style.animationDelay=Math.random()*3+"s";
+
+document.getElementById("stars").appendChild(star);
+}
+
+document.addEventListener("click",(e)=>{
+
+let heart=document.createElement("div");
+heart.innerHTML="❤️";
+heart.classList.add("heart");
+
+heart.style.left=e.clientX+"px";
+heart.style.top=e.clientY+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},2500);
+
+});
+
+</script>
+
 </body>
 </html>
